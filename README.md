@@ -33,7 +33,8 @@ __OBJECTS:__
 -  WALL
 -  SPELL
 -  WAIZARD
--  EMPTY      (No Floor or Wall)
+-  EMPTY        
+(No Floor or Wall)  
   
 __DIRECTIONS:__  
 -	Up
