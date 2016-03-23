@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Graphics">
+      <UniqueIdentifier>{5c534bd9-9efb-4259-964b-7b2e88e8a73b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game">
+      <UniqueIdentifier>{2d84ddf8-7676-47ad-818a-5571d5be6d76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\Units">
+      <UniqueIdentifier>{f626eb4e-d51e-40ad-a0d6-db6ee9eadad3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\Events">
+      <UniqueIdentifier>{40950dea-e9b5-4168-9db9-5750a61056cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{f454642a-3ee2-4f8c-8891-2d23057112d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Units">
+      <UniqueIdentifier>{65344c57-c8d5-4ca6-a7d7-ed0cc657e5d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Events">
+      <UniqueIdentifier>{ba0a3111-1322-4f89-980c-6eb2afc60f77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI">
+      <UniqueIdentifier>{de2d6b25-abbd-4a95-9d51-630e5f11dfbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI">
+      <UniqueIdentifier>{73816af3-0e47-47a9-94d4-dac284529ee4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Graphics">
+      <UniqueIdentifier>{37e520c1-4757-47ed-92b6-5b09a5bbb5af}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Event.h">
+      <Filter>Header Files\Game\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EventListener.h">
+      <Filter>Header Files\Game\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EventSystem.h">
+      <Filter>Header Files\Game\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\InputManager.h">
+      <Filter>Header Files\Game\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameListener.h">
+      <Filter>Header Files\Game\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Unit.h">
+      <Filter>Header Files\Game\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\WAIzard.h">
+      <Filter>Header Files\Game\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Wall.h">
+      <Filter>Header Files\Game\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Floor.h">
+      <Filter>Header Files\Game\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Animation.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Color.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GraphicsBuffer.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Font.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Sprite.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Game.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vector2.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GraphicsBufferManager.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Event.cpp">
+      <Filter>Source Files\Game\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EventSystem.cpp">
+      <Filter>Source Files\Game\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GameListener.cpp">
+      <Filter>Source Files\Game\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\InputManager.cpp">
+      <Filter>Source Files\Game\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Animation.cpp">
+      <Filter>Source Files\Game\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Color.cpp">
+      <Filter>Source Files\Game\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GraphicsBuffer.cpp">
+      <Filter>Source Files\Game\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sprite.cpp">
+      <Filter>Source Files\Game\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Wall.cpp">
+      <Filter>Source Files\Game\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Floor.cpp">
+      <Filter>Source Files\Game\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Unit.cpp">
+      <Filter>Source Files\Game\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\WAIzard.cpp">
+      <Filter>Source Files\Game\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Game.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Font.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GraphicsSystem.cpp">
+      <Filter>Source Files\Game\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\InputListener.cpp">
+      <Filter>Source Files\Game\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vector2.cpp">
+      <Filter>Source Files\Game\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GraphicsBufferManager.cpp">
+      <Filter>Source Files\Game\Graphics</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Resources\AI\WAIzard_Template.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Resources\AI\WAIzard1.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Resources\Levels\Level_Box.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Resources\Levels\Level_Experiment.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Resources\Levels\Level_Span.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Resources\Levels\Level_Star.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

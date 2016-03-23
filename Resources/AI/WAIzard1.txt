@@ -1,0 +1,7 @@
+Basic: FIREBALL
+Ultimate: LASER_BEAM
+Passive1: MANA_ALIGNMENT
+Passive2: MANA_ALIGNMENT
+
+if True 
+Move Down

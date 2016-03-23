@@ -1,0 +1,34 @@
+Basic: FIREBALL
+Ultimate: LASER_BEAM
+Passive1: MANA_ALIGNMENT
+Passive2: BLOOD_MAGE
+
+if Health > 50
+Basic Forward
+
+if ! Mana < 75
+Ultimate Random
+
+if TimeMark1 > 0
+Reset and Move Untried
+
+if TimeMark2 > 99
+Move Up
+
+if WAIZARD at 5 0
+Basic Right
+
+if SPELL through Left 7
+Move Down
+
+if ! Random > 95
+Do Nothing
+
+if TimeMark3 > 50
+Reset and SetMark1
+
+if TimeMark3 > 50
+Cancel Attack
+
+if TimeMark3 > 50
+Cancel Move
