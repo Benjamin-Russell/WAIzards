@@ -73,7 +73,7 @@ __if OBJECT through DIRECTION* 55__
 (check through (55 / 10) + 1 tiles in DIRECTION for OBJECT)       *See: DIRECTIONS  
 -	CHECK_RANDOM  
 __if Random < 50__  
-(50% chance)  
+(Random between 0-99)  
 -	CHECK_ATTACK  
 __if Attacking__  
 (if current action is a basic or ultimate attack)  
