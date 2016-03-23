@@ -4,4 +4,7 @@ Passive1: MANA_ALIGNMENT
 Passive2: MANA_ALIGNMENT
 
 if True 
-Move Down
+Move Untried
+
+if WAIZARD through Forward 60
+Basic Forward
