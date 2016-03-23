@@ -36,17 +36,17 @@ __OBJECTS:__
 -  EMPTY      (No Floor or Wall)
   
 __DIRECTIONS:__  
--	UP
--	DOWN
--	LEFT
--	RIGHT
--	FORWARD
--	BACKWARD
--	UNTRIED  
+-	Up
+-	Down
+-	Left
+-	Right
+-	Forward
+-	Backward
+-	Untried  
 (A direction in which moving was not just blocked by a Wall or WAIzard)
--	FOCUSED  
+-	Focused  
 (The direction "Focused on," held in the mFocusDirection variable)  
--	RANDOM   
+-	Random   
 (Up, Down, Left, or Right)  
 
 __Conditions:__  
