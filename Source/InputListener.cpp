@@ -120,7 +120,7 @@ void InputListener::handleEvent(const Event &theEvent)
 			break;
 		case L_PRESSED:
 			for (unsigned int i = 0; i < Game::getInstance()->getWAIzardSize(); ++i)
-				Game::getInstance()->getWAIzard(i)->loadAI("WAIzard1.txt");
+				Game::getInstance()->getWAIzard(i)->loadAI("Resources/AI/WAIzard1.txt");
 		break;
 		case M_PRESSED:
 			if (Game::getInstance()->mDrawMana)

@@ -3,7 +3,7 @@
 
 enum Direction
 {
-	NO_DIRECTION = -1, // Don't move, or don't attack
+	NO_DIRECTION = -1,
 	UP,
 	DOWN,
 	LEFT,

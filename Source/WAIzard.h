@@ -96,7 +96,7 @@ enum AIAction
 
 	CHANGE_DIRECTION,		// Change current action direction
 	CHANGE_TO_BASIC,		// Change current action to Basic if able to basic
-	CHANGE_TO_ULT,			// Change current action to Ult if able to Ult
+	CHANGE_TO_ULTIMATE,		// Change current action to Ult if able to Ult
 	CHANGE_TO_MOVE,			// Change current action to Move
 
 	WAIT,					// Wait a period of time before running AI again	//////////to do

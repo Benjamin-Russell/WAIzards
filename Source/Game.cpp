@@ -381,10 +381,10 @@ void Game::runGameLoop(int targetFrameRate)
 	mRunningLoop = true;
 
 	// Load a level
-	//loadLevel("Resources/Levels/Level_Star.txt");
+	loadLevel("Resources/Levels/Level_Star.txt");
 	//loadLevel("Resources/Levels/Level_Span.txt");
 	//loadLevel("Resources/Levels/Level_Box.txt");
-	loadLevel("Resources/Levels/Level_Experiment.txt");
+	//loadLevel("Resources/Levels/Level_Experiment.txt");
 
 	while (mRunningLoop)
 	{

@@ -710,8 +710,8 @@ void WAIzard::executeAI()
 			}
 			break;
 
-		case CHECK_COLLISION_LINE:																											         // 64 / 8, for tile size and reducing conditionAmount to only useful distances
-			doAction = checkLineCollision(mAI[i].mConditionSet.mConditionObject, Vector2(mPosition.x + 32.0f, mPosition.y + 32.0f), (mAI[i].mConditionSet.mConditionAmount * 8) + 64, relativizeDirection(mAI[i].mConditionSet.mConditionDirection), mID);
+		case CHECK_COLLISION_LINE:																											         //for tile size and reducing conditionAmount to only useful distances
+			doAction = checkLineCollision(mAI[i].mConditionSet.mConditionObject, Vector2(mPosition.x + 32.0f, mPosition.y + 32.0f), (int)((float)mAI[i].mConditionSet.mConditionAmount * 64.0f / 10.0f) + 64, relativizeDirection(mAI[i].mConditionSet.mConditionDirection), mID);
 			break;
 
 		case CHECK_RANDOM:
@@ -895,7 +895,7 @@ void WAIzard::executeAI()
 				}
 				break;
 
-			case CHANGE_TO_ULT:
+			case CHANGE_TO_ULTIMATE:
 				if (Game::getInstance()->getCurrentTime() - mTimeLastUltimate >= mUltimateCoolDown && mCurrentMana >= manaForUltimate)
 				{
 					mActionsToTake[mActionsToTake.size() - 1]->mAction = SHOOT_ULT;
@@ -1285,9 +1285,9 @@ void WAIzard::loadAction(ifstream &fileIn)
 		{
 			mAI[mAI.size() - 1].mActionSet.mAction = (AIAction)CHANGE_TO_BASIC;
 		}
-		else if (word == "Ult")
+		else if (word == "Ultimate")
 		{
-			mAI[mAI.size() - 1].mActionSet.mAction = (AIAction)CHANGE_TO_ULT;
+			mAI[mAI.size() - 1].mActionSet.mAction = (AIAction)CHANGE_TO_ULTIMATE;
 		}
 		else if (word == "Move")
 		{
