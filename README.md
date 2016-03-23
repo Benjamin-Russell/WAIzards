@@ -7,19 +7,19 @@ This is made in Visual Studio 2013, and uses SDL 2.
 The project is in development, currently most of the AI is fleshed out. You can edit the file Resources/AI/Waizard1.txt, which
 is currently where all WAIzards poll their AI. I'll add a short AI guide below. The plan is to next end a level after a minute or a winner has been found. Then create the evolution system which will breed the most fit WAIzards, save their AI to new files, and start the next round. After, I plan to add more attacks, an interface with tons of customizability, and to generate reports of data on the simulation.
 
-To Run:
+To Run:  
 -Open the sln file, and build (CONTROL-SHIFT-B) in Debug or Release.
 -Then run the corresponding Batch file, WAIZARDS_DEBUG / WAIZARDS_RELEASE
 
 This is done in order to link the DLL's in their folder without placing them in the working directory. Feel
 free to inspect the Batch files yourself.
 
-Controls: (currently)
-H       -   Toggle health bars
-M       -   Toggle mana bars
-L       -   Reload AI (WAIzard1.txt) in game
-Enter   -   Load level_box
-Escape  -   Quit program
+Controls: (currently)  
+H       -   Toggle health bars  
+M       -   Toggle mana bars  
+L       -   Reload AI (WAIzard1.txt) in game  
+Enter   -   Load level_box  
+Escape  -   Quit program  
 
 AI Guide:
 AI is run when a WAIzard is aligned with the tiles, and has a cooldown of half a second currently.
