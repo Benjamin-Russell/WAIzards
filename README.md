@@ -1,5 +1,5 @@
 # WAIzards
-Project by Benjamin Russell, 2016
+Project by Benjamin Russell, 2016  
 A simulation about battling Wizards with AI meant to begin very simply and behave more intelligently through a process of evolution.
 
 This is made in Visual Studio 2013, and uses SDL 2.
