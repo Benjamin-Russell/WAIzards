@@ -44,7 +44,7 @@ __DIRECTIONS:__
 -	Forward
 -	Backward
 -	Untried  
-(A direction in which moving was not just blocked by a Wall or WAIzard)
+(A direction in which moving was not just blocked by a Wall or WAIzard. Reset upon successful move)
 -	Focused  
 (The direction "Focused on," held in the mFocusDirection variable)  
 -	Random   
