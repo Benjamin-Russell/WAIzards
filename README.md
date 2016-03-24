@@ -84,11 +84,11 @@ __if OBJECT through DIRECTION 55__
 __if Random < 50__  
 (Random between 0-99)    
 
--	CHECK_ATTACK  
+-	CHECK_ATTACKING  
 __if Attacking__  
 (if current action is a basic or ultimate attack)    
 
--	CHECK_MOVE  
+-	CHECK_MOVING  
 __if Moving__  
 (if current action is a move)    
 
