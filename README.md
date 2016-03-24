@@ -2,7 +2,7 @@
 Project by Benjamin Russell, 2016  
 A simulation about battling Wizards with AI meant to begin very simply and behave more intelligently through a process of evolution.
 
-This is made in Visual Studio 2013, and uses SDL 2.
+This is made with C++ in Visual Studio 2013, and uses SDL 2.
 
 The project is in development, currently most of the AI is fleshed out. You can edit the file Resources/AI/Waizard1.txt, which
 is currently where all WAIzards poll their AI. I'll add a short AI guide below. The plan is to next end a level after a minute or a winner has been found. Then create the evolution system which will breed the most fit WAIzards, save their AI to new files, and start the next round. After, I plan to add more attacks, an interface with tons of customizability, and to generate reports of data on the simulation.
