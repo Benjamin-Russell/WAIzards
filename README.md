@@ -4,8 +4,8 @@ A simulation about battling Wizards with AI meant to begin very simply and behav
 
 This is made with C++ in Visual Studio 2013, and uses SDL 2.
 
-The project is in development, currently most of the AI is fleshed out. You can edit the file Resources/AI/Waizard1.txt, which
-is currently where all WAIzards poll their AI. I'll add a short AI guide below. The plan is to next end a level after a minute or a winner has been found. Then create the evolution system which will breed the most fit WAIzards, save their AI to new files, and start the next round. After, I plan to add more attacks, an interface with tons of customizability, and to generate reports of data on the simulation.
+The project is in development, currently much of the AI is fleshed out. You can edit the file Resources/AI/Waizard1.txt, which
+is currently where all WAIzards poll their AI. There is a short AI guide below. The plan is to create the evolution system which will breed the most fit WAIzards, save their AI to new files, and start the next round. This part may be done for my Capstone, so in the meantime I plan to work on more ability implementations, graphics, and optimization.
 
 __To Run:__  
 -Open the sln file, and build (CONTROL-SHIFT-B) in Debug or Release.  
@@ -24,9 +24,9 @@ Escape  -   Quit program
 __AI Guide:__  
 AI is run when a WAIzard is aligned with the tiles, and has a cooldown of half a second currently.
 
-The first four lines define the basic attack, ultimate attack, and two passives of a WAIzard. Currently there are no ultimate attacks, and very few working passives. The evolution system takes precedent before those.
+The first four lines define the basic attack, ultimate attack, and two passives of a WAIzard. Currently there are no ultimate attacks, and very few working passives.
 
-Next are the AI Blocks, one line for an if condition, and the next line for the consequent action. Do_Nothing, Move, Basic, and Ultimate actions are placed at the top of the WAIzard's action vector. When all the AI has been run, the last action is chosen. There are other actions like SET, CANCEL, and CHANGE, which do not get placed in the action vector.
+Next are the AI Blocks, one line for an if condition, and the next line for the consequent action. Do_Nothing, Move, Basic, and Ultimate actions are placed at the top of the WAIzard's action vector. When all the AI has been run, the last action is chosen. The other actions like SET, CANCEL, and CHANGE do not get placed in the action vector.
 
 __OBJECTS:__
 -  FLOOR
