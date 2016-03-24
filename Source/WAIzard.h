@@ -65,12 +65,13 @@ enum AICondition
 	CHECK_TIME_MARK2,
 	CHECK_JUST_FOCUSED,		// Check mJustFocused, True if focus dir has been set this turn     //////////to do
 	CHECK_POSITION,
-	CHECK_COLLISION_LINE,	// ConditionAmount is divided by 8, checks that many tiles + 1
+	CHECK_COLLISION_LINE,	// ConditionAmount is divided by 10, checks that many tiles + 1
 	CHECK_RANDOM,
-	CHECK_ATTACK,
-	CHECK_MOVE,
+	CHECK_ATTACKING,
+	CHECK_MOVING,
 	DO_ACTION,				// if True
 	ELSE,
+	ALSO,
 	NUM_CONDITIONS
 };
 

@@ -721,14 +721,14 @@ void WAIzard::executeAI()
 			}
 			break;
 
-		case CHECK_ATTACK:
+		case CHECK_ATTACKING:
 			if (mActionsToTake[mActionsToTake.size() - 1]->mAction == SHOOT_BASIC || mActionsToTake[mActionsToTake.size() - 1]->mAction == SHOOT_ULT)
 			{
 				doAction = true;
 			}
 			break;
 
-		case CHECK_MOVE:
+		case CHECK_MOVING:
 			if (mActionsToTake[mActionsToTake.size() - 1]->mAction == MOVE)
 			{
 				doAction = true;
@@ -741,6 +741,13 @@ void WAIzard::executeAI()
 
 		case ELSE:
 			if (lastOutcome == false)
+			{
+				doAction = true;
+			}
+			break;
+
+		case ALSO:
+			if (lastOutcome == true)
 			{
 				doAction = true;
 			}
@@ -1041,6 +1048,12 @@ void WAIzard::loadAI(string file)
 			mAI[mAI.size() - 1].mConditionSet.mCondition = ELSE;
 			loadAction(fileIn);
 		}
+		else if (word == "also")
+		{
+			mAI.push_back(AIBlock());
+			mAI[mAI.size() - 1].mConditionSet.mCondition = ALSO;
+			loadAction(fileIn);
+		}
 	}
 
 	std::cout << "~Loaded file into AI: " << file << std::endl;
@@ -1156,11 +1169,11 @@ void WAIzard::loadCondition(ifstream &fileIn, bool newBlock)
 	}
 	else if (word == "Attacking")
 	{
-		mAI[mAI.size() - 1].mConditionSet.mCondition = (AICondition)CHECK_ATTACK;
+		mAI[mAI.size() - 1].mConditionSet.mCondition = (AICondition)CHECK_ATTACKING;
 	}
 	else if (word == "Moving")
 	{
-		mAI[mAI.size() - 1].mConditionSet.mCondition = (AICondition)CHECK_MOVE;
+		mAI[mAI.size() - 1].mConditionSet.mCondition = (AICondition)CHECK_MOVING;
 	}
 	else if (word == "True")
 	{
