@@ -71,8 +71,8 @@ __if TimeMark2 < 30__
 (if "Reset and" begins the consequent action, set the condition TimeMark)  
 
 -	CHECK_POSITION          
-__if OBJECT at 7 2__   
-(check 7 tiles to the right, 2 down)            *See: OBJECTS  
+__if OBJECT at 7 -2__   
+(check 7 tiles to the right, 2 up)            *See: OBJECTS  
 __if OBJECT DIRECTION__  
 (check adjacent tile in DIRECTION for OBJECT)         *See: DIRECTIONS    
 
@@ -84,11 +84,11 @@ __if OBJECT through DIRECTION 55__
 __if Random < 50__  
 (Random between 0-99)    
 
--	CHECK_ATTACK  
+-	CHECK_ATTACKING  
 __if Attacking__  
 (if current action is a basic or ultimate attack)    
 
--	CHECK_MOVE  
+-	CHECK_MOVING  
 __if Moving__  
 (if current action is a move)    
 
@@ -99,6 +99,10 @@ __if True__
 -	ELSE  
 __else__  
 (if previous condition outcome was false)  
+
+- ALSO  
+__also__  
+(if previous condition ouctome was true)  
 
 __Actions:__  
 
