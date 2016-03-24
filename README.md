@@ -66,11 +66,13 @@ __if TimeMark1 > 20__
 __if TimeMark2 < 30__  
 (if "Reset and" begins the consequent action, set the condition TimeMark)  
 -	CHECK_POSITION          
-__if OBJECT* at 7 2__   
-(check 7 tiles to the right, 2 down)            *See: OBJECTS
+__if OBJECT at 7 2__   
+(check 7 tiles to the right, 2 down)            *See: OBJECTS  
+__if OBJECT DIRECTION__  
+(check adjacent tile in DIRECTION for OBJECT)         *See: DIRECTIONS  
 -	CHECK_COLLISION_LINE   
-__if OBJECT through DIRECTION* 55__  
-(check through (55 / 10) + 1 tiles in DIRECTION for OBJECT)       *See: DIRECTIONS  
+__if OBJECT through DIRECTION 55__  
+(check through (55 / 10) + 1 tiles in DIRECTION for OBJECT) 
 -	CHECK_RANDOM  
 __if Random < 50__  
 (Random between 0-99)  
