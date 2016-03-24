@@ -93,7 +93,7 @@ __Actions:__
 
 -	DO_NOTHING  
 __Do Nothing__  
-(Don't act this AI cycle)  
+(An action for doing nothing)  
 -	SHOOT_BASIC  
 __Basic DIRECTION__  
 (Use Basic spell if has the mana and off cooldown in DIRECTION)  
