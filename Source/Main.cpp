@@ -41,6 +41,8 @@
 
 // Fullscreen toggle non-functional
 
+// See if removing transparency of walls and floors increases draw performance
+
 // Implement all the shit
 
 int main(int argc, char** argv)
