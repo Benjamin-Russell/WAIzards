@@ -71,8 +71,8 @@ __if TimeMark2 < 30__
 (if "Reset and" begins the consequent action, set the condition TimeMark)  
 
 -	CHECK_POSITION          
-__if OBJECT at 7 2__   
-(check 7 tiles to the right, 2 down)            *See: OBJECTS  
+__if OBJECT at 7 -2__   
+(check 7 tiles to the right, 2 up)            *See: OBJECTS  
 __if OBJECT DIRECTION__  
 (check adjacent tile in DIRECTION for OBJECT)         *See: DIRECTIONS    
 
