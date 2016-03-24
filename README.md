@@ -100,6 +100,10 @@ __if True__
 __else__  
 (if previous condition outcome was false)  
 
+- ALSO  
+__also__  
+(if previous condition ouctome was true)  
+
 __Actions:__  
 
 -	DO_NOTHING  
