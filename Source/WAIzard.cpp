@@ -14,8 +14,8 @@ WAIzard::WAIzard(Vector2 position, string file)
 	mDepth = 50;
 	mID = Game::getInstance()->getUnitID();
 
-	mHealthBar = Unit(position, Vector2(0.0f, 0.0f), Vector2(32.0f, 4.0f), Game::getInstance()->getGraphicsBufferManager()->getGraphicsBuffer("Bars"), 50, Game::getInstance()->getUnitID());
-	mManaBar = Unit(position, Vector2(0.0f, 10.0f), Vector2(32.0f, 4.0f), Game::getInstance()->getGraphicsBufferManager()->getGraphicsBuffer("Bars"), 50, Game::getInstance()->getUnitID());
+	mHealthBar = Unit(position, Vector2(0.0f, 0.0f), Vector2(32.0f, 4.0f), Game::getInstance()->getGraphicsBufferManager()->getGraphicsBuffer("Bars"), 45, Game::getInstance()->getUnitID());
+	mManaBar = Unit(position, Vector2(0.0f, 10.0f), Vector2(32.0f, 4.0f), Game::getInstance()->getGraphicsBufferManager()->getGraphicsBuffer("Bars"), 45, Game::getInstance()->getUnitID());
 
 	mMaxHealth = 100;
 	mMaxMana = 100.0f;

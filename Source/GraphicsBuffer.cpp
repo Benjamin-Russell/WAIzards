@@ -1,6 +1,7 @@
 #include "GraphicsBuffer.h"
 #include <string>
 
+
 GraphicsBuffer::GraphicsBuffer()
 {
 	mpSurface = NULL;

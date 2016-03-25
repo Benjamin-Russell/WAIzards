@@ -8,8 +8,7 @@
 
 // The longer the AI, the longer the wait to execute AI is? make variable
 
-// Make all movement based on time
-// - multiply by a ratio, correct?
+// Remove transparency from environment sprites
 
 // Push spells
 // - Waizard to die when flung into the emptiness. (Already works if they move into emptyness).
@@ -23,18 +22,13 @@
 // - Action: CHANGE_TO_ULT
 // - Action: CHANGE_TO_MOVE
 // - Multi condition ifs / actions which allow for this behavior
-// - Waizards can set a direction like the timestamps   ////////////////////
 // - Add condition for checking direction currently about to move in?
 // - SURROUNDING direction for conditions?
-
-// - list for actions to take
-// -- Cancel last action
-// -- Cancel all actions
 // - UNTRIED, Add this to attacks as well?
 
 // BUG: Waizards can clip into eachother when crammed.
 
-// Is move speed redundant?
+// Is move speed redundant? I don't think so
 // -- Check if melee outcomes are favored towards lower ID WAIzards or faster movement speed
 
 // Make passives stack
@@ -44,6 +38,8 @@
 // See if removing transparency of walls and floors increases draw performance
 
 // Implement all the shit
+
+// To convert old environment to darker kind: use pixlr online, place original background under, set mode to Hardlight
 
 int main(int argc, char** argv)
 {

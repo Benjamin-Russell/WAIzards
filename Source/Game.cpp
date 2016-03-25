@@ -188,11 +188,13 @@ void Game::drawGame(GraphicsSystem* gs)
 		mspGraphicsSystem->drawBuffer(mspGraphicsBufferManager->getGraphicsBuffer("Background"), Vector2(0, 0));
 		//mspGraphicsSystem->clear(Color(160, 32, 240)); // Draw solid color
 
+		// Draw Floors
 		for (unsigned int i = 0; i < mFloors.size(); ++i)
 		{
 			mspGraphicsSystem->addUnit(dynamic_cast<Unit*>(&mFloors[i]));
 		}
 
+		// Draw Walls
 		for (unsigned int i = 0; i < mWalls.size(); ++i)
 		{
 			mspGraphicsSystem->addUnit(dynamic_cast<Unit*>(&mWalls[i]));
@@ -217,7 +219,7 @@ void Game::drawGame(GraphicsSystem* gs)
 		// for fps /////////////////////////
 		addTileToRedraw(Vector2());
 
-		// Objects are drawn in best order for descending depth, for least vector inserts
+		// Objects are drawn in best order for descending depth, for least vector inserts.
 
 		unsigned int j;
 
@@ -245,35 +247,43 @@ void Game::drawGame(GraphicsSystem* gs)
 			}
 		}
 
+		// Draw dead WAIzards always
+		for (unsigned int i = 0; i < mWAIzards.size(); ++i)
+		{
+			if (mWAIzards[i].getDead())
+				mspGraphicsSystem->addUnit(dynamic_cast<Unit*>(&mWAIzards[i]));
+		}
+
 		// Draw WAIzards always
 		for (unsigned int i = 0; i < mWAIzards.size(); ++i)
 		{
-			mspGraphicsSystem->addUnit(dynamic_cast<Unit*>(&mWAIzards[i]));
+			if (!mWAIzards[i].getDead())
+				mspGraphicsSystem->addUnit(dynamic_cast<Unit*>(&mWAIzards[i]));
+		}
+
+		// Draw WAIzard bars always
+		for (unsigned int i = 0; i < mWAIzards.size(); ++i)
+		{
+			if (!mWAIzards[i].getDead())
+			{
+				mWAIzards[i].updateBars();
+
+				if (mDrawHealth)
+				{
+					mspGraphicsSystem->addUnit(&mWAIzards[i].mHealthBar);
+				}
+
+				if (mDrawMana)
+				{
+					mspGraphicsSystem->addUnit(&mWAIzards[i].mManaBar);
+				}
+			}
 		}
 
 		// Draw Spells always
 		for (unsigned int i = 0; i < mSpells.size(); ++i)
 		{
 			mspGraphicsSystem->addUnit(dynamic_cast<Unit*>(mSpells[i]));
-		}
-	}
-
-	// Draw WAIzard bars
-	for (unsigned int i = 0; i < mWAIzards.size(); ++i)
-	{
-		if (!mWAIzards[i].getDead())
-		{
-			mWAIzards[i].updateBars();
-
-			if (mDrawHealth)
-			{
-				mspGraphicsSystem->addUnit(&mWAIzards[i].mHealthBar);
-			}
-
-			if (mDrawMana)
-			{
-				mspGraphicsSystem->addUnit(&mWAIzards[i].mManaBar);
-			}
 		}
 	}
 
