@@ -423,7 +423,7 @@ void Game::runGameLoop(int targetFrameRate)
 			mCurrentFps = mFrameCounter;
 			mFrameCounter = 0;
 
-			std::cout << findTilePosASM(&Vector2(2.0f, 3.0f)) << std::endl;
+			std::cout << findTilePosASM(&Vector2(128.0f, 128.0f))->x << " " << findTilePosASM(&Vector2(128.0f, 128.0f))->y << std::endl;
 		}
 
 		//--------------Get input--------------//
