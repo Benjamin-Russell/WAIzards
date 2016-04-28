@@ -710,7 +710,7 @@ void WAIzard::executeAI()
 			}
 			break;
 
-		case CHECK_COLLISION_LINE:																											         //for tile size and reducing conditionAmount to only useful distances
+		case CHECK_COLLISION_LINE:																		 //for tile size and reducing conditionAmount to only useful distances. 0-99 is divided by 10, + a tile
 			doAction = checkLineCollision(mAI[i].mConditionSet.mConditionObject, Vector2(mPosition.x + 32.0f, mPosition.y + 32.0f), (int)((float)mAI[i].mConditionSet.mConditionAmount * 64.0f / 10.0f) + 64, relativizeDirection(mAI[i].mConditionSet.mConditionDirection), mID);
 			break;
 
@@ -754,6 +754,7 @@ void WAIzard::executeAI()
 			break;
 		}
 
+		// !
 		if (mAI[i].mConditionSet.mNegateCondition)
 		{
 			doAction = !doAction;

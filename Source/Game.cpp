@@ -143,7 +143,7 @@ void Game::loadLevel(string file)
 	mWAIzards.clear();
 	mSpells.clear();
 
-	// Redraw entire screen
+	// Redraw entire screen next draw
 	mRedrawEverything = true;
 
 	ifstream fileIn(file, std::ifstream::in);
@@ -200,10 +200,18 @@ void Game::drawGame(GraphicsSystem* gs)
 			mspGraphicsSystem->addUnit(dynamic_cast<Unit*>(&mWalls[i]));
 		}
 
+		// Draw dead WAIzards
+		for (unsigned int i = 0; i < mWAIzards.size(); ++i)
+		{
+			if (mWAIzards[i].getDead())
+				mspGraphicsSystem->addUnit(dynamic_cast<Unit*>(&mWAIzards[i]));
+		}
+
 		// Draw WAIzards
 		for (unsigned int i = 0; i < mWAIzards.size(); ++i)
 		{
-			mspGraphicsSystem->addUnit(dynamic_cast<Unit*>(&mWAIzards[i]));
+			if (!mWAIzards[i].getDead())
+				mspGraphicsSystem->addUnit(dynamic_cast<Unit*>(&mWAIzards[i]));
 		}
 
 		// Draw Spells
@@ -385,7 +393,7 @@ void Game::update(const float frameLength)
 // The 10% of the code that's being run 90% of the time
 void Game::runGameLoop(int targetFrameRate)
 {
-	const float frameLength = 1.0f / 60.0f;//(float)targetFrameRate;
+	const float frameLength = 1.0f / (float)targetFrameRate;
 	mCurrentFps = targetFrameRate;
 
 	mRunningLoop = true;
