@@ -176,4 +176,9 @@
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
+  <ItemGroup>
+    <MASM Include="Source\VectorNew.asm">
+      <Filter>Source Files\Game\Graphics</Filter>
+    </MASM>
+  </ItemGroup>
 </Project>

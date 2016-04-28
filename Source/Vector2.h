@@ -67,4 +67,7 @@ bool checkPointCollision(Rect rect, Vector2 point);
 bool checkLineCollision(Object objectType, Vector2 start, int length, Direction dir);
 bool checkLineCollision(Object objectType, Vector2 start, int length, Direction dir, int notID);
 
+// Assembly functions defined externally in object file for VectorNew.asm
+extern "C" float findTilePosASM(Vector2* v);
+
 #endif
