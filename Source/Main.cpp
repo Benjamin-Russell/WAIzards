@@ -6,6 +6,8 @@
 
 // TODO:
 
+// Make use of assembly functions optional if they're staying in
+
 // The longer the AI, the longer the wait to execute AI is? make variable
 
 // Remove transparency from environment sprites

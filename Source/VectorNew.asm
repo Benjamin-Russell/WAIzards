@@ -78,6 +78,9 @@ findTilePosASM ENDP
 			; checkPointCollisionASM is a function which checks if a point lies within a rectangle,
 			; and returns true or false. Comparisons are done in opposite (< to >=) because to continue 
 			; through the checks means to not jump down to the false return.
+			; It is used at line 131 of Vector2.cpp for checkLineCollision() Where you can see it
+			; is currently being used instead of the c++ implementation. Currently each Waizard is using
+			; this function when checking for other WAIzards in front of them to attack
 
 			; How it looks in c++:
 			; if (point.x >= rect.mPosition.x 

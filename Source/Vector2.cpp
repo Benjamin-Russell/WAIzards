@@ -128,25 +128,31 @@ bool checkLineCollision(Object objectType, Vector2 start, int length, Direction 
 		case FLOOR:
 			for (unsigned int i = 0; i < Game::getInstance()->getFloorSize() && !foundCollision; ++i)
 			{
-				foundCollision = checkPointCollision(Game::getInstance()->getFloorBoundingBox(i), toCheck);
+				//foundCollision = checkPointCollision(Game::getInstance()->getFloorBoundingBox(i), toCheck);
+				foundCollision = checkPointCollisionASM(&Game::getInstance()->getFloorBoundingBox(i), &toCheck);
 			}
 			break;
 		case WALL:
 			for (unsigned int i = 0; i < Game::getInstance()->getWallSize() && !foundCollision; ++i)
 			{
-				foundCollision = checkPointCollision(Game::getInstance()->getWallBoundingBox(i), toCheck);
+				//foundCollision = checkPointCollision(Game::getInstance()->getWallBoundingBox(i), toCheck);
+				foundCollision = checkPointCollisionASM(&Game::getInstance()->getWallBoundingBox(i), &toCheck);
 			}
 			break;
 		case WAIZARD:
 			for (unsigned int i = 0; i < Game::getInstance()->getWAIzardSize() && !foundCollision; ++i)
 			{
-				foundCollision = checkPointCollision(Game::getInstance()->getWAIzardBoundingBox(i), toCheck);
+				//foundCollision = checkPointCollision(Game::getInstance()->getWAIzardBoundingBox(i), toCheck);
+				foundCollision = checkPointCollisionASM(&Game::getInstance()->getWAIzardBoundingBox(i), &toCheck);
+
 			}
 			break;
 		case SPELL:
 			for (unsigned int i = 0; i < Game::getInstance()->getSpellSize() && !foundCollision; ++i)
 			{
-				foundCollision = checkPointCollision(Game::getInstance()->getSpellBoundingBox(i), toCheck);
+				//foundCollision = checkPointCollision(Game::getInstance()->getSpellBoundingBox(i), toCheck);
+				foundCollision = checkPointCollisionASM(&Game::getInstance()->getSpellBoundingBox(i), &toCheck);
+
 			}
 			break;
 		}
