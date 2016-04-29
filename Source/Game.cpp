@@ -304,7 +304,8 @@ void Game::drawGame(GraphicsSystem* gs)
 
 void Game::addTileToRedraw(Vector2 pos)
 {
-	Vector2 toAdd = pos.findTilePos();
+	//Vector2 toAdd = pos.findTilePos();
+	Vector2 toAdd = *findTilePosASM(&pos);
 
 	// Don't add duplicates
 	bool foundCopy = false;
@@ -422,11 +423,6 @@ void Game::runGameLoop(int targetFrameRate)
 			mFpsUpdateTime -= 1.0f;
 			mCurrentFps = mFrameCounter;
 			mFrameCounter = 0;
-
-			Vector2* vec = findTilePosASM(&Vector2(513.0f, 511.0f));
-			
-			std::cout << vec->x << " " << vec->y << std::endl;
-			//std::cout << findTilePosASM(&Vector2(280.0f, 220.0f))->x << std::endl;
 		}
 
 		//--------------Get input--------------//
