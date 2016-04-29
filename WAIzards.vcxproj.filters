@@ -181,9 +181,4 @@
       <Filter>Source Files\Game\Graphics</Filter>
     </MASM>
   </ItemGroup>
-  <ItemGroup>
-    <Object Include="Source\VectorNew.obj">
-      <Filter>Source Files\Game\Graphics</Filter>
-    </Object>
-  </ItemGroup>
 </Project>
