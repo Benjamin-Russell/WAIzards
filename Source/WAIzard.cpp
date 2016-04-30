@@ -1563,7 +1563,8 @@ void Spell::update()
 		for (i = 0; i < Game::getInstance()->getWAIzardSize() && !isTrash; ++i)
 		{
 			if (Game::getInstance()->getWAIzardID(i) != mWAIzardID && !Game::getInstance()->getWAIzardDead(i))
-				isTrash = mBoundingBox.checkCollision(Game::getInstance()->getWAIzardBoundingBox(i));
+				//isTrash = mBoundingBox.checkCollision(Game::getInstance()->getWAIzardBoundingBox(i));
+				isTrash = checkRectCollisionASM(&mBoundingBox, &Game::getInstance()->getWAIzardBoundingBox(i));
 
 			if (isTrash)
 			{
@@ -1578,7 +1579,8 @@ void Spell::update()
 		// Walls
 		for (i = 0; i < Game::getInstance()->getWallSize() && !isTrash; ++i)
 		{
-			isTrash = mBoundingBox.checkCollision(Game::getInstance()->getWallBoundingBox(i));
+			//isTrash = mBoundingBox.checkCollision(Game::getInstance()->getWallBoundingBox(i));
+			isTrash = checkRectCollisionASM(&mBoundingBox, &Game::getInstance()->getWallBoundingBox(i));
 		}
 
 		Game::getInstance()->addCornersToRedraw(mPosition, 60.0f);

@@ -4,6 +4,7 @@
 
 findTilePosASM PROTO C vectorAddress:DWORD
 checkPointCollisionASM PROTO C rectAddress:DWORD, vectorAddress:DWORD
+checkRectCollisionASM PROTO C rect1Address:DWORD, rect2Address:DWORD
 
 .data
 	tileSize DWORD 64d
@@ -155,5 +156,87 @@ checkPointCollisionASM PROC C rectAddress:DWORD, vectorAddress:DWORD
 	ret
 
 checkPointCollisionASM ENDP
+
+			; checkRectCollisionASM checks to see if two rectangles / bounding boxes
+			; intersect. It is currently being used at line 1567 and 1583 of WAIzard.cpp in 
+			; the spell update function to detect if it has hit any Waizards or Walls.
+
+			; How it looks in c++:
+			; if (mPosition.x + mSize.x >= otherRect.mPosition.x 
+			; && mPosition.x <= otherRect.mPosition.x + otherRect.mSize.x
+			; && mPosition.y + mSize.y >= otherRect.mPosition.y 
+			; && mPosition.y <= otherRect.mPosition.y + otherRect.mSize.y)
+			; return true;
+			; else return false;
+checkRectCollisionASM PROC C rect1Address:DWORD, rect2Address:DWORD
+
+	push ecx
+	push edx
+
+	xor ecx, ecx
+	xor edx, edx
+	xor eax, eax
+
+	mov ecx, rect1Address		; ecx holds address of Rect1 in heap
+	mov edx, rect2Address		; edx holds address of Rect2 in heap
+
+	; Is r1.x + r1.width < r2.x
+	finit
+	fld DWORD PTR [edx]
+	fld DWORD PTR [ecx]
+	fld DWORD PTR [ecx + 8]
+	fadd st(0), st(1)
+
+	fcomi st, st(2)
+	jb GOTO_FALSE
+
+	; Is r1.x > r2.x + r2.width
+	finit	
+	fld DWORD PTR [edx]
+	fld DWORD PTR [edx + 8]
+	fadd st(0), st(1)
+	fld DWORD PTR [ecx]
+
+	fcomi st, st(1)
+	ja GOTO_FALSE
+
+	; Is r1.y + r1.height < r2.y
+	finit
+	fld DWORD PTR [edx + 4]
+	fld DWORD PTR [ecx + 4]
+	fld DWORD PTR [ecx + 12]
+	fadd st(0), st(1)
+
+	fcomi st, st(2)
+	jb GOTO_FALSE
+
+	; Is r1.y > r2.y + r2.height
+	finit	
+	fld DWORD PTR [edx + 4]
+	fld DWORD PTR [edx + 12]
+	fadd st(0), st(1)
+	fld DWORD PTR [ecx + 4]
+
+	fcomi st, st(1)
+	ja GOTO_FALSE
+
+	; Return true, if all test cases are true
+	pop edx
+	pop ecx
+
+	xor eax, eax
+	mov eax, 1
+	ret
+
+	; Return false
+	GOTO_FALSE:
+
+	pop edx
+	pop ecx
+
+	xor eax, eax
+	ret
+
+checkRectCollisionASM ENDP
 
 END
