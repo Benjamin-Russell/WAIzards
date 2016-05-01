@@ -1057,7 +1057,7 @@ void WAIzard::loadAI(string file)
 		}
 	}
 
-	std::cout << "~Loaded file into AI: " << file << std::endl;
+	//std::cout << "~Loaded file into AI: " << file << std::endl;
 	fileIn.close();
 }
 

@@ -27,6 +27,7 @@
 // - Add condition for checking direction currently about to move in?
 // - SURROUNDING direction for conditions?
 // - UNTRIED, Add this to attacks as well?
+// Should WAIzards be able to "See" through walls?
 
 // BUG: Waizards can clip into eachother when crammed.
 

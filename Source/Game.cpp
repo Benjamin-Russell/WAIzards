@@ -405,6 +405,8 @@ void Game::runGameLoop(int targetFrameRate)
 	//loadLevel("Resources/Levels/Level_Box.txt");
 	//loadLevel("Resources/Levels/Level_Experiment.txt");
 
+	bool madeSpeedTest = false;
+
 	while (mRunningLoop)
 	{
 		// Time Management
@@ -423,6 +425,68 @@ void Game::runGameLoop(int targetFrameRate)
 			mFpsUpdateTime -= 1.0f;
 			mCurrentFps = mFrameCounter;
 			mFrameCounter = 0;
+		}
+
+		// Speed Test Speed Test Speed Test Speed Test Speed Test Speed Test Speed Test Speed Test Speed Test Speed Test Speed Test
+		if (!madeSpeedTest && mCurrentTime > 3.0f)
+		{
+			madeSpeedTest = true;
+			Uint32 start;
+			std::cout << "The following function time trials are in milliseconds:\n\n";
+
+			// Time trials for findTilePos
+			start = SDL_GetTicks();
+			for (int i = 0; i < 1000000; ++i)
+			{
+				Vector2((float)(i * 6), (float)(i * 6)).findTilePos();
+			}
+
+			std::cout << "(C++) :: findTilePos() 1 million times: " << SDL_GetTicks() - start << std::endl << std::endl;
+			
+			// Time trials for findTilePosASM
+			start = SDL_GetTicks();
+			for (int i = 0; i < 1000000; ++i)
+			{
+				findTilePosASM(&Vector2((float)(i * 6), (float)(i * 6)));
+			}
+
+			std::cout << "(ASM) :: findTilePosASM() 1 million times: " << SDL_GetTicks() - start << std::endl << std::endl;
+
+			// Time trials for checkPointCollision
+			start = SDL_GetTicks();
+			for (int i = 0; i < 1000000; ++i)
+			{
+				checkPointCollision(Rect(Vector2(16.0f, 16.0f), Vector2(32.0f, 32.0f)), Vector2(32.0f, 32.0f));
+			}
+
+			std::cout << "(C++) :: checkPointCollision() 1 million times: " << SDL_GetTicks() - start << std::endl << std::endl;
+
+			// Time trials for checkPointCollisionASM
+			start = SDL_GetTicks();
+			for (int i = 0; i < 1000000; ++i)
+			{
+				checkPointCollisionASM(&Rect(Vector2(16.0f, 16.0f), Vector2(32.0f, 32.0f)), &Vector2(32.0f, 32.0f));
+			}
+
+			std::cout << "(ASM) :: checkPointCollisionASM() 1 million times: " << SDL_GetTicks() - start << std::endl << std::endl;
+
+			// Time trials for checkCollision
+			start = SDL_GetTicks();
+			for (int i = 0; i < 1000000; ++i)
+			{
+				Rect(Vector2(64.0f, 64.0f), Vector2(64.0f, 64.0f)).checkCollision(Rect(Vector2(16.0f, 16.0f), Vector2(32.0f, 32.0f)));
+			}
+
+			std::cout << "(C++) :: checkCollision() 1 million times: " << SDL_GetTicks() - start << std::endl << std::endl;
+
+			// Time trials for checkRectCollisionASM
+			start = SDL_GetTicks();
+			for (int i = 0; i < 1000000; ++i)
+			{
+				checkRectCollisionASM(&Rect(Vector2(64.0f, 64.0f), Vector2(64.0f, 64.0f)), &Rect(Vector2(16.0f, 16.0f), Vector2(32.0f, 32.0f)));
+			}
+
+			std::cout << "(ASM) :: checkRectCollisionASM() 1 million times: " << SDL_GetTicks() - start << std::endl << std::endl;
 		}
 
 		//--------------Get input--------------//
