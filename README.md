@@ -4,8 +4,11 @@ A simulation about battling Wizards with AI meant to begin very simply and behav
 
 This is made with C++ in Visual Studio 2013, and uses SDL 2.
 
-The project is in development, currently much of the AI is fleshed out. You can edit the file Resources/AI/Waizard1.txt, which
-is currently where all WAIzards poll their AI. There is a short AI guide below. The plan is to create the evolution system which will breed the most fit WAIzards, save their AI to new files, and start the next round. This part may be done for my Capstone, so in the meantime I plan to work on more ability implementations, graphics, and optimization.
+__Note:__
+This project is suspended indefinitely.
+
+Currently much of the AI is fleshed out. You can edit the file Resources/AI/Waizard1.txt, which
+is where all WAIzards poll their AI. There is a short AI guide below. The plan is to create the evolution system which will breed the most fit WAIzards, save their AI to new files, and start the next round. This part may be done for my Capstone, so in the meantime I plan to work on more ability implementations, graphics, and optimization.
 
 __To Run:__  
 -Open the sln file, and build (CONTROL-SHIFT-B) in Debug or Release.  
